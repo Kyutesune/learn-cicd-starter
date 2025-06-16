@@ -13,7 +13,7 @@ func (cfg *apiConfig) middlewareAuth(handler authedHandler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		apiKey, err := auth.GetAPIKey(r.Header)
 		if err != nil {
-			respondWithError(w, http.StatusUnauthorized, "Couldn't find api key", err)
+			respondWithError(w, http.StatusInternalServerError, "Couldn't find api key", err)
 			return
 		}
 
@@ -23,6 +23,6 @@ func (cfg *apiConfig) middlewareAuth(handler authedHandler) http.HandlerFunc {
 			return
 		}
 
-		handler(w, r, user)
+		//handler(w, r, user)
 	}
 }
