@@ -22,4 +22,4 @@ jobs:
         run: go test ./... -cover
   style:
       - name: "Check Formatting"
-        run: test -z $(go fmt ./...)
+        run: test -z $(go fmt ./...) 
