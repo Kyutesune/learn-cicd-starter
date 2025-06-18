@@ -21,7 +21,10 @@ jobs:
       - name: Display go Version
         run: go test ./... -cover
   style:
-      steps:
+    name: Style
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Check out code
         uses: actions/checkout@v4
 
@@ -29,6 +32,6 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: "1.23.0"
-                    
-      - name: Style
+
+      - name: Formats the Code
         run: test -z $(go fmt ./...)
