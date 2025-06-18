@@ -21,5 +21,5 @@ jobs:
       - name: Display go Version
         run: go test ./... -cover
   style:
-      - name: "Check Formatting"
-        run: test -z $(go fmt ./...)
+      - name: Check Formatting
+        run: test -z $(go fmt ./...) 
